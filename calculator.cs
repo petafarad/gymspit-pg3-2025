@@ -10,3 +10,11 @@ while (!float.TryParse(Console.ReadLine(), out num2))
 {
     Console.WriteLine("Invalid input. Please enter a valid integer for the second number:");
 }
+Console.WriteLine("Select operation (+, -, *, /):");
+string operation = Console.ReadLine();
+while (operation != "+" && operation != "-" && operation != "*" && operation != "/") //copilot
+{
+    Console.WriteLine("Invalid operation. Please select a valid operation (+, -, *, /):");
+    operation = Console.ReadLine();
+}
+
