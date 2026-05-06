@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-    internal class HandEvaluation
+    public class HandEvaluation
     {
-        public HandRank Rank { get; set; }
-        public List<int> CardValues { get; set; } = new List<int>();
+        public Card.HandRank Rank { get; set; }
+        public List<int> CardValues { get; set; }
     }
 }

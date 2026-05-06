@@ -7,45 +7,46 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-    internal class Card
+    public class Card
     {
+
         public enum Suit
         {
-            Hearts,
-            Diamonds,
-            Clubs,
-            Spades
+            Hearts = 0,
+            Diamonds = 1,
+            Clubs = 2,
+            Spades = 3
         }
-
         public enum Rank
         {
-            Two,
-            Three,
-            Four,
-            Five,
-            Six,
-            Seven,
-            Eight,
-            Nine,
-            Ten,
-            Jack,
-            Queen,
-            King,
-            Ace
+             Two = 0,
+            Three = 1,
+            Four = 2,
+            Five = 3,
+            Six = 4,
+            Seven = 5,
+            Eight = 6,
+            Nine = 7,
+            Ten = 8,
+            Jack = 9,
+            Queen = 10,
+            King = 11,
+            Ace = 12
         }
         public enum HandRank
         {
-            HighCard,
-            OnePair,
-            TwoPair,
-            ThreeOfAKind,
-            Straight,
-            Flush,
-            FullHouse,
-            FourOfAKind,
-            StraightFlush,
-            RoyalFlush
+            HighCard = 0,
+            OnePair = 1,
+            TwoPair = 2,
+            ThreeOfAKind = 3,
+            Straight = 4,
+            Flush = 5,
+            FullHouse = 6,
+            FourOfAKind = 7,
+            StraightFlush = 8,
+            RoyalFlush = 9
         }
+
 
         public Suit CardSuit { get; }
         public Rank CardRank { get; }
@@ -60,10 +61,10 @@ namespace Poker
         {
             return CardSuit switch
             {
-                Suit.Hearts => '♡',
-                Suit.Diamonds => '♢',
-                Suit.Clubs => '♧',
-                Suit.Spades => '♤',
+               Suit.Hearts => '♡',
+               Suit.Diamonds => '♢',
+               Suit.Clubs => '♧',
+               Suit.Spades => '♤',
                 _ => '?'
             };
         }
