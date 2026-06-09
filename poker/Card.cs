@@ -28,10 +28,10 @@ namespace Poker
             Eight = 6,
             Nine = 7,
             Ten = 8,
-            Jack = 9,   // Spodek
-            Queen = 10, // Královna
-            King = 11,  // Král
-            Ace = 12    // Eso
+            Jack = 9,
+            Queen = 10,
+            King = 11,
+            Ace = 12
         }
 
         public enum HandRank
