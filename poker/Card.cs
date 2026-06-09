@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,7 +9,6 @@ namespace Poker
 {
     public class Card
     {
-
         public enum Suit
         {
             Hearts = 0,
@@ -17,9 +16,10 @@ namespace Poker
             Clubs = 2,
             Spades = 3
         }
+
         public enum Rank
         {
-             Two = 0,
+            Two = 0,
             Three = 1,
             Four = 2,
             Five = 3,
@@ -28,11 +28,12 @@ namespace Poker
             Eight = 6,
             Nine = 7,
             Ten = 8,
-            Jack = 9,
-            Queen = 10,
-            King = 11,
-            Ace = 12
+            Jack = 9,   // Spodek
+            Queen = 10, // Královna
+            King = 11,  // Král
+            Ace = 12    // Eso
         }
+
         public enum HandRank
         {
             HighCard = 0,
@@ -47,7 +48,6 @@ namespace Poker
             RoyalFlush = 9
         }
 
-
         public Suit CardSuit { get; }
         public Rank CardRank { get; }
 
@@ -61,10 +61,10 @@ namespace Poker
         {
             return CardSuit switch
             {
-               Suit.Hearts => '♡',
-               Suit.Diamonds => '♢',
-               Suit.Clubs => '♧',
-               Suit.Spades => '♤',
+                Suit.Hearts => '♡',
+                Suit.Diamonds => '♢',
+                Suit.Clubs => '♧',
+                Suit.Spades => '♤',
                 _ => '?'
             };
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -11,11 +11,16 @@ namespace Poker
     internal class Player
     {
         public string Name { get; }
+
         public int Chips { get; private set; }
+
         public List<Card> Hand { get; }
+
         public bool IsFolded { get; private set; }
+
         public int BetThisRound { get; private set; }
 
+        public string LastAction { get; set; }
         public Player(string name, int StartChips)
         {
             Name = name;
@@ -23,13 +28,13 @@ namespace Poker
             Hand = new List<Card>();
             IsFolded = false;
             BetThisRound = 0;
+            LastAction = "Waiting";
         }
 
         public void ReceiveCard(Card card)
         {
             Hand.Add(card);
         }
-
         public void ShowHand()
         {
             Console.WriteLine($"{Name}'s hand:");
@@ -48,6 +53,7 @@ namespace Poker
         {
             if (amount > Chips)
                 amount = Chips;
+
             Chips -= amount;
             BetThisRound += amount;
             return amount;
@@ -62,12 +68,19 @@ namespace Poker
         {
             Chips += amount;
         }
-
         public void ResetForNewRound()
         {
             Hand.Clear();
             IsFolded = false;
             BetThisRound = 0;
+            LastAction = "Waiting";
+        }
+
+        public void ResetBetThisRound()
+        {
+            BetThisRound = 0;
+            if (!IsFolded)
+                LastAction = "Waiting";
         }
     }
 }

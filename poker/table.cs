@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +9,17 @@ namespace Poker
     internal class Table
     {
         public List<Card> CommunityCards { get; private set; }
-        public int Pot { get; private set; }
 
         public Table()
         {
             CommunityCards = new List<Card>();
-            Pot = 0;
         }
+
         public void ResetTable()
         {
             CommunityCards.Clear();
-            Pot = 0;
         }
+
         public void DealFlop(Deck deck)
         {
             for (int i = 0; i < 3; i++)
@@ -28,6 +27,7 @@ namespace Poker
                 CommunityCards.Add(deck.DrawCard());
             }
         }
+
         public void ShowCommunityCards()
         {
             Console.WriteLine("Community Cards:");
@@ -41,6 +41,7 @@ namespace Poker
                 Console.WriteLine("]");
             }
         }
+
         public void DealTurnOrRiver(Deck deck)
         {
             CommunityCards.Add(deck.DrawCard());
